@@ -1,0 +1,339 @@
+$color-black: #000
+
+$color-primary: #EB5E55
+$color-primary-light-1: #EC6C64
+$color-primary-light-2: #F08983
+$color-primary-dark-1: #D6564E
+$color-primary-dark-2: #C14D46
+
+$color-secondary: #3A3335
+$color-secondary-light-1: #4B4547
+$color-secondary-light-2: #5D5859
+$color-secondary-dark-1: #352F31
+$color-secondary-dark-2: #302A2C
+
+$color-terciary: #D81E5B
+$color-terciary-light-1: #DB3269
+$color-terciary-light-2: #DF4678
+$color-terciary-dark-1: #C51C53
+$color-terciary-dark-2: #B1194B
+
+
+$blue-overlay: linear-gradient(to right, rgba(#000022, .7), rgba(#000022, .7))
+
+*, *::before, *::after
+  margin: 0
+  padding: 0
+  box-sizing: inherit
+
+html
+  box-sizing: border-box
+  font-size: 62.5%
+
+body
+  font-family: sans-serif
+  font-weight: 300
+  line-height: 1.6
+
+////////////////////////////////////////////////////////////
+// LAYOUT
+
+.margin-top-ss
+  margin-top: 2rem
+.margin-top-sm
+  margin-top: 3rem
+.margin-top-md
+  margin-top: 4rem
+.margin-top-lg
+  margin-top: 5rem
+.margin-top-hg
+  margin-top: 8rem
+  
+.margin-bottom-ss
+  margin-bottom: 2rem
+.margin-bottom-sm
+  margin-bottom: 3rem
+.margin-bottom-md
+  margin-bottom: 4rem
+.margin-bottom-lg
+  margin-bottom: 5rem
+.margin-bottom-hg
+  margin-bottom: 8rem
+.container
+  display: grid
+  grid-template-rows: min-content 87vh
+  grid-template-columns: [full-start] minmax(6rem, 1fr) [center-start] repeat(8, [col-start] minmax(min-content, 14rem) [col-end]) [center-end] minmax(6rem, 1fr) [full-end]
+
+.header
+  z-index: 20
+  padding: 2rem
+  grid-column: full-start / full-end
+  display: grid
+  grid-auto-flow: column
+  align-items: center
+  background-color: rgba(#000, 0)
+  grid-row: 1 / 2
+  
+  &__logo a
+    text-decoration: none
+    text-transform: uppercase
+    font-size: 1.8rem
+    padding: 1.5rem
+    text-align: center
+    margin-right: minmax(3rem, auto)
+    color: #fff
+  &__nav
+    list-style: none
+    display: grid
+    grid-auto-flow: column
+    grid-gap: 2rem
+
+  &__item-try
+    transition: all 0.2s
+    text-transform: uppercase
+    background-size: 200% 100%
+    background-image: linear-gradient(to left, #fff 50%, $color-primary 50%)
+    border-radius: 3px
+
+    &:hover, &:active
+      background-position: -100% 0
+    &:hover a, &:active a
+      color: $color-primary
+
+  &__link:link,  &__link:visited
+    text-decoration: none
+    text-transform: uppercase
+    font-size: 1.8rem
+    text-align: center
+    padding: 1.5rem
+    display: block
+    transition: all .2s
+    color: #fff
+
+  &__link:hover, &__link:active
+    color: $color-primary-light-2
+    transform: translateY(-2px)
+
+  &__link-try:hover, &__link-try:active
+    color: #fff
+    transform: none
+
+.hero
+  z-index: 10
+  grid-row: 1 / span 2
+  grid-column: full-start / full-end
+  background-size: cover
+  background-position: center
+  background-image: $blue-overlay, url(/images/product_hero.jpg)
+  display: grid
+  align-content: center
+  justify-content: center
+  align-items: center
+  grid-gap: 2rem
+
+  &__buttons
+    display: grid
+    grid-auto-flow: column
+    grid-template-columns: repeat(2, max-content)
+    grid-gap: 0 3rem
+    align-content: center
+    justify-content: center
+    margin-top: 5rem
+
+.usecases
+  grid-column: full-start / full-end
+  display: grid
+  grid-gap: 3rem
+  align-content: center
+  justify-content: center
+
+
+.explore__under-the-hood
+  grid-column: full-start / full-end
+  background-color: $color-secondary-dark-2
+  hr
+    max-width: 6.25vw
+    margin: 2rem auto
+  &-content
+    display: grid
+    grid-auto-flow: column
+    grid-template-columns: repeat(3, 25vw)
+    align-content: center
+    justify-content: center
+  p
+    color: #f0f0f0
+    padding: 0 2rem
+    font-size: 1.6rem
+    text-align: center
+  &-column
+    display: grid
+    justify-items: center
+    grid-gap: 2rem
+
+.contact-form
+  grid-column: full-start / full-end
+  background-color: $color-primary
+  display: grid
+  grid-auto-flow: column
+
+.bg-el-right
+  display: grid
+  justify-content: end
+
+.footer
+  grid-column: full-start / full-end
+  background-color: $color-secondary-dark-2
+  height: 20rem
+  padding: 3rem
+  &__links
+    display: grid
+    grid-auto-flow: column
+    grid-template-columns: repeat(4, max-content)
+    grid-gap: 3rem
+    list-style: none
+    text-align: center
+  & .link:link, & .link:visited
+    text-decoration: none
+    text-align: center
+    color: #f0f0f0
+    font-size: 1.6rem
+
+  
+////////////////////////////////////////////////////////////
+// TYPOGRAPHY
+
+.hero__header-one
+  color: $color-primary
+  font-size: 7.0rem
+  font-weight: 800
+  text-transform: uppercase
+  text-align: center
+
+.header-one
+  font-size: 4.0rem
+  font-weight: 800
+  text-transform: uppercase
+  text-align: center
+
+.header__type-one
+  color: $color-primary
+  font-size: 4.0rem
+  font-weight: 800
+  text-transform: uppercase
+  text-align: center
+
+.hero__header-two
+  color: #fff
+  font-size: 2.1rem
+  font-weight: 200
+  text-transform: uppercase
+  text-align: center
+
+.explore__header-three
+  color: $color-primary
+  font-size: 2rem
+  font-weight: 600
+  text-align: center
+////////////////////////////////////////////////////////////
+// COMPONENTS
+
+.main-btn
+  color: $color-primary
+  background-color: #fff
+  border: none
+  border-radius: 3px
+  font-size: 1.8rem
+  text-transform: uppercase
+  padding: 2rem 3rem
+  cursor: pointer
+  transition: all .2s
+  z-index: 10
+
+  &:hover
+    transform: translateY(-5px)
+    box-shadow: 0 1rem 3rem rgba($color-black, .15)
+
+  &:active
+    transform: translateY(0)
+    box-shadow: 0 .5rem 2rem rgba($color-black, .15)
+
+.verticals__menu
+  display: grid
+  grid-auto-flow: column
+  list-style: none
+  text-align: center
+  padding: 5rem 10rem
+
+  & li
+    position: relative
+  & li:not(:last-child)::after
+    content: ""
+    background: #959595
+    height: 1.5rem
+    opacity: .3
+    top: 50%
+    width: 2px
+    transform: translateY(-50%)
+    right: 0
+    position: absolute
+
+  & a:link,  & a:visited
+    text-decoration: none
+    text-transform: uppercase
+    font-size: 1.8rem
+    text-align: center
+    padding: 1.5rem
+    display: block
+    transition: all .2s
+    color: $color-secondary-light-2
+
+  & a:hover,  & a:active
+    color: $color-primary
+  
+  & .selected
+    border-bottom: 2px solid $color-primary
+    a
+      color: $color-primary
+
+.usecases
+  &__content
+    display: grid
+    grid-auto-flow: column
+    margin-left: 5rem
+    grid-template-columns: minmax(20rem, 30vw)
+
+  &__item h2
+    color: $color-primary
+    font-size: 2rem
+    font-weight: 600
+    margin-bottom: 2rem
+  &__item p
+    font-size: 1.6rem
+    font-weight: 300
+  &__laptop img
+    width: 100%
+
+.contact-form__content-cta 
+  display: grid
+  align-content: center
+  justify-items: center
+  p
+  font-size: 2.2rem
+  text-align: center
+  button
+    background-image: linear-gradient(to left, $color-secondary-dark-2 50%, #fff 50%)
+    background-size: 200% 100%
+    overflow: hidden
+    color: $color-secondary
+    border: none
+    border-radius: 3px
+    font-size: 1.6rem
+    text-transform: uppercase
+    padding: 2rem 3rem
+    cursor: pointer
+    transition: all .2s
+    z-index: 10
+    &:hover, &:active
+      background-position: -100% 0
+      color: #f0f0f0
+      
